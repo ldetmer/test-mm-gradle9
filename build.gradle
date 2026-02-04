@@ -1,15 +1,22 @@
+buildscript {
+  repositories {
+    mavenLocal()
+    mavenCentral()
+  }
+  dependencies {
+    classpath 'com.google.cloud.tools:jib-gradle-plugin:3.5.2-SNAPSHOT'
+  }
+}
+
 plugins {
     id 'java'
     id 'org.springframework.boot' version '4.0.0'
-    id 'com.google.cloud.tools.jib' version '3.5.2'
 }
+
+apply plugin: 'com.google.cloud.tools.jib'
 
 group = 'org.example'
 version = '1.0-SNAPSHOT'
-
-repositories {
-    mavenCentral()
-}
 
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
